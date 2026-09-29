@@ -1,0 +1,26 @@
+# Dependencies for notebooks/pipeline_Q3_BioBERT_5ejes_CORREGIDO.ipynb (Section 4 / Q3 text-mining analysis).
+# Extracted from the notebook's own `!pip install` cells and top-level imports.
+# Developed and run on Google Colab (recorded interpreter: Python 3.14.7 -- see
+# results/metrics/run_manifest.json). Versions were not pinned when this pipeline's
+# results were produced (see run_manifest.json's "known_limitation"); this file
+# lists unpinned package names so it does not imply a reproducibility guarantee
+# that does not exist yet.
+#
+# google-colab (drive mounting) is Colab-provided and is not listed here; running
+# outside Colab requires supplying the input PDFs/paths some other way.
+
+numpy
+pandas
+scikit-learn
+sentence-transformers
+bertopic
+umap-learn
+hdbscan
+transformers
+torch
+networkx
+matplotlib
+Pillow
+pdfplumber
+ftfy
+tqdm

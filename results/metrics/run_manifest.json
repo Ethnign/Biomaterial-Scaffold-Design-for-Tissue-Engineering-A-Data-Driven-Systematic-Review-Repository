@@ -1,0 +1,14 @@
+{
+  "_note": "Manually reconstructed from notebooks/pipeline_Q3_BioBERT_5ejes_CORREGIDO.ipynb and its own !pip install cells and kernel metadata, not emitted automatically by a run-logging step in the pipeline itself. This is a partial stand-in for the run manifest proposed in the repository reorganization guide (Section 2); see data/processed/README.md for what is still missing (a real run_id tying this to per-fragment/per-topic intermediate tables).",
+  "notebook": "notebooks/pipeline_Q3_BioBERT_5ejes_CORREGIDO.ipynb",
+  "random_seed": 33,
+  "seeded_libraries": ["numpy", "random", "umap-learn (UMAP random_state)", "hdbscan", "networkx (spring_layout seed)"],
+  "recorded_python_version": "3.14.7 (from the notebook's saved Jupyter kernel metadata, language_info.version; this is the interpreter version recorded in the Colab session that produced the results in this repository, not a pinned requirement)",
+  "ner_model": "d4data/biomedical-ner-all",
+  "package_list_from_notebook_pip_installs": [
+    "sentence-transformers", "bertopic", "umap-learn", "hdbscan", "scikit-learn",
+    "transformers", "networkx", "matplotlib", "pandas", "numpy", "Pillow",
+    "pdfplumber", "ftfy", "torch"
+  ],
+  "known_limitation": "Package versions were not pinned or logged at the time this run was produced (no `pip freeze` capture). Per the reorganization guide's own Section 3 guidance ('la semilla debe acompañarse de las versiones del entorno y del modelo; por sí sola no documenta toda la reproducibilidad'), this is disclosed as an open reproducibility gap rather than papered over -- an exact re-run is not guaranteed to use identical library versions. requirements.txt at the repository root lists unpinned package names only, for the same reason."
+}

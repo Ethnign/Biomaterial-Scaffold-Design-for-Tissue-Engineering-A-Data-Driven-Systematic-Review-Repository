@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository's data, code, or supplementary materials, please cite both this repository and the manuscript below."
+type: software
+title: "Biomaterial Scaffold Design for Tissue Engineering — Data & Code Repository"
+authors:
+  - family-names: "García San Andrés"
+    given-names: "Ethan Nicolás"
+  - family-names: "García Plúa"
+    given-names: "Juan Carlos"
+repository-code: "https://github.com/Ethnign/Biomaterial-Scaffold-Design-for-Tissue-Engineering-A-Data-Driven-Systematic-Review-Repository"
+license: CC-BY-4.0
+preferred-citation:
+  type: article
+  title: "Cross-Material Design Strategies in Hydroxyapatite-, Chitosan-, and Polycaprolactone-Based Scaffolds: A Systematic Review of Biological Performance and Evidence Quality"
+  authors:
+    - family-names: "García San Andrés"
+      given-names: "Ethan Nicolás"
+    - family-names: "García Plúa"
+      given-names: "Juan Carlos"
+  journal: "Biomaterials and Biosystems"
+  status: "submitted"
+  notes: "Update this file's DOI/volume/issue/pages once the manuscript is accepted and formally published; it is currently under review."

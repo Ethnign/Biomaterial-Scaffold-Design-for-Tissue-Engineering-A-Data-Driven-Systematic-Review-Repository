@@ -1,0 +1,29 @@
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# LaTeX build artifacts (only the .tex source and final .pdf are tracked)
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.bbl
+manuscript/*.blg
+manuscript/*.spl
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.synctex.gz
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Secrets / credentials -- never commit these
+.env
+*.pem
+*_token*
+credentials.json

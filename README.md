@@ -2,46 +2,86 @@
 
 Supporting repository for: **"Cross-Material Design Strategies in Hydroxyapatite-, Chitosan-, and Polycaprolactone-Based Scaffolds: A Systematic Review of Biological Performance and Evidence Quality"** (submitted to *Biomaterials and Biosystems*).
 
-This repository accompanies the manuscript's Data Availability statement and provides the full extraction dataset, risk-of-bias assessment, reporting checklists, and the complementary text-mining analysis code underlying the review's 78 included studies.
+## What this is
 
-## Contents
+A systematic review (PRISMA 2020) of 78 studies on hydroxyapatite-, chitosan-, and polycaprolactone (PCL)-based tissue-engineering scaffolds. This repository holds the full per-study extraction data, the formal risk-of-bias assessment, PRISMA reporting checklists, the manuscript source, and the code and data for the complementary text-mining analysis (Section 4 of the manuscript).
 
-| File | Description |
+**Research questions this repository's data and code address:**
+
+- **Q1 / Q2** (answered from the manual extraction in `supplementary/Supplementary_Table_S1_Extraction_Matrix.csv` and `Supplementary_Table_S3`): what design/modification strategies are used with each material, and what biological performance do they produce?
+- **Q3** (answered by the pipeline in `notebooks/`): what does entity co-occurrence network analysis reveal about the relative conceptual centrality of hydroxyapatite and PCL across five content axes, and what bridge concepts connect otherwise disconnected thematic sub-domains?
+
+**The five content axes**, used throughout the Q3 analysis (topic classification, entity networks) and referenced across several supplementary tables, are non-exclusive (a single study/fragment can belong to more than one):
+
+| Axis | What it captures |
 | --- | --- |
-| `Supplementary_Table_S1_Extraction_Matrix.csv` | Full per-study extraction matrix for all 78 included studies (materials, modification strategy, experimental design, qualitative/quantitative results). |
-| `Supplementary_Table_S2_Bias_Indicators.csv` | Approximate, non-validated reporting-completeness indicator (0-4) per study. Not a formal risk-of-bias assessment (see Table S5 for that). |
-| `Supplementary_Table_S3_MxSxTxOxE_Matrix.csv` | Material x Strategy x Tissue-Application x Outcome x Evidence-Type matrix for all 78 included studies. |
-| `Supplementary_Table_S4_Concentration_Response_19_Studies.csv` | Concentration-level detail (levels tested, reported optimum) for the 19 studies underlying the non-monotonic concentration-response pattern (manuscript Section 3.5). |
-| `Supplementary_Table_S5_Risk_of_Bias_QUIN_SYRCLE.xlsx` | Formal risk-of-bias assessment for all 78 included studies: QUIN (12-item tool) for the in vitro component and SYRCLE (10-domain tool) for the in vivo/CAM component, identity-verified against each study's full text, with a second independent blinded assessor for reliability (see manuscript Discussion). |
-| `Data_Dictionary_Supplementary_Tables.md` | Column-by-column definitions for Tables S1-S4, plus known open items. |
-| `Search_Strategy_Log_Scopus_WebOfScience.md` | Full, literal Boolean search strings for both databases and both question-specific blocks (Q1, Q2), with record counts and translation notes. |
-| `Deduplication_Log.md` | Methodology and record-count accounting for the three-pass deduplication process (564 -> 495 unique records). |
-| `PRISMA_2020_Checklist.md` | Completed PRISMA 2020 27-item reporting checklist, mapped to manuscript sections, with open items stated explicitly. |
-| `PRISMA-S_Checklist.md` | Completed PRISMA-S (search reporting extension) checklist, mapped to manuscript sections. |
-| `nlp_analysis/pipeline_Q3_BioBERT_5ejes.ipynb` | Full executable notebook for the Section 4 (Q3) analysis: BioBERT embeddings, UMAP/HDBSCAN topic modeling via BERTopic, biomedical named-entity recognition, and the five content-axis co-occurrence networks. Run with a fixed random seed (seed = 33) for reproducibility. |
-| `nlp_analysis/Reporte_Metodologico_Q3.pdf` | Methodology narrative for the Q3 pipeline (hyperparameters, validation diagnostics). |
-| `nlp_analysis/Reporte_5_Ejes_Analisis_Red.pdf` | Full results report for the five content-axis networks, including per-axis findings and the source network visualizations. |
-| `nlp_analysis/networks/` | Final network visualizations for all five content axes (Material/Composition, Fabrication Strategy, Engineering Property, Biological Function, Tissue Application), each as both `.png` and vector `.pdf`, filtered to the most highly connected nodes for legibility (Gephi). |
-| `LICENSE` | CC BY 4.0 (Creative Commons Attribution 4.0 International). |
+| Material/Composition | Matrix, reinforcement, bioactive agent |
+| Fabrication Strategy | How the scaffold was built or modified |
+| Engineering Property | Measurable physical/mechanical characteristics |
+| Biological Function | The biological effect produced |
+| Tissue Application | Target tissue or organ |
+
+## Folder structure
+
+```
+manuscript/       Manuscript source (.tex) and PDF, and the figures actually used in it.
+data/
+  raw/            Search-strategy and deduplication logs (see data/raw/README.md for what's not included: raw exports, full-text PDFs).
+  processed/      Pipeline-derived intermediate data (topic/axis classification table).
+notebooks/        Main pipeline notebook (Section 4/Q3), plus notebooks/legacy/ for the superseded, unseeded version.
+src/              Reserved for pipeline functions gradually migrated out of the notebook (currently empty -- see src/README.md).
+config/           Externalized pipeline parameters: five-axis keyword dictionaries, thresholds, entity-normalization rules.
+results/
+  networks/       The five complete, unfiltered co-occurrence networks (.gexf).
+  figures/        Rendered network images not used as main-text figures, plus superseded_matplotlib/ (archived pre-Gephi renders).
+  tables/         (currently empty; see docs/Figure_Table_Manifest.md for what each manuscript table is sourced from)
+  metrics/        Run manifest (seed, recorded environment) for the Q3 pipeline.
+supplementary/    Supplementary Tables S1-S5, the risk-of-bias assessor guide, and its blank template.
+docs/             Data dictionary, PRISMA checklists, risk-of-bias process log, figure/table manifest, this reorganization's notes.
+requirements.txt  Unpinned package list for the Q3 notebook.
+CITATION.cff      How to cite this repository and the manuscript.
+LICENSE           CC BY 4.0.
+```
+
+## Environment
+
+- The Q3 pipeline notebook was developed and run on **Google Colab**; its saved kernel metadata records **Python 3.14.7**. Package versions were **not pinned** at the time these results were produced (see `results/metrics/run_manifest.json`) -- this is disclosed as an open reproducibility gap, not fixed retroactively.
+- Install packages with `pip install -r requirements.txt` (unpinned names only, for the reason above). A GPU is used automatically if available (falls back to CPU) for the biomedical NER step.
+
+## Main run-through (Section 4 / Q3 pipeline)
+
+1. **Input:** the full-text PDFs of the 78 included studies (not included in this repository; see `data/raw/README.md`) plus `supplementary/Supplementary_Table_S1_Extraction_Matrix.csv` for study identity.
+2. **Run:** `notebooks/pipeline_Q3_BioBERT_5ejes_CORREGIDO.ipynb`, top to bottom, with a fixed seed (33, set in an early cell). Stages: PDF text extraction and cleaning -> BioBERT embeddings -> UMAP dimensionality reduction + HDBSCAN clustering (hyperparameter search) -> BERTopic topic modeling -> five-axis topic classification (thresholds and dictionaries mirrored in `config/`) -> entity normalization (`config/entity_normalization_patterns.json`) -> biomedical NER (`d4data/biomedical-ner-all`) -> per-axis co-occurrence network construction.
+3. **Output:** `data/processed/clasificacion_5ejes_topicos.csv` (topic -> axis classification), `results/networks/*.gexf` (five complete networks), and the centrality statistics reported in the manuscript's Table (`tab:q3axes`) and Section 4 text. Static renders (`manuscript/figures/*_gephi_crop.pdf`, `results/figures/*_gephi_crop.pdf`) were produced from the `.gexf` files in Gephi, a separate, manual, external step not scripted in the notebook.
+
+See `docs/Figure_Table_Manifest.md` for the complete mapping of every manuscript figure and table (and every Supplementary Table) to its source file and how it was produced, including which results are deterministically reproducible from the notebook and which (S1-S5, the risk-of-bias assessment, the PRISMA diagram) are the product of manual expert judgement and are not.
+
+## Data availability and what is not included here
+
+- The raw Scopus/Web of Science search export files and the 78 included studies' full-text PDFs are **not** included (the latter for copyright reasons). Citations/DOIs for all 78 studies are in Supplementary Table S1; raw exports are available from the corresponding author on reasonable request.
+- Everything else needed to interpret and, where the analysis is deterministic, reproduce the manuscript's results is in this repository.
 
 ## Reproducibility notes
 
-- The Section 4 (Q3) text-mining analysis is run with a fixed random seed (seed = 33 across NumPy, UMAP, and HDBSCAN); an independent re-run using the provided notebook and corpus should reproduce the same topic assignments, cluster boundaries, and entity-network structure reported in the manuscript. This directly supersedes an earlier, non-seeded version of the analysis, which is acknowledged in the manuscript as a resolved limitation.
-- The reporting-quality indicator in Table S2 is an approximate, non-validated screening heuristic distinct from a formal risk-of-bias tool. A formal risk-of-bias assessment (QUIN for in vitro studies, SYRCLE for in vivo/CAM studies) has been applied to all 78 included studies and is provided in `Supplementary_Table_S5_Risk_of_Bias_QUIN_SYRCLE.xlsx`, with a second independent, blinded assessor confirming the overall risk judgement for every study.
-- Full-text accessibility was applied as a Stage 2 eligibility criterion (manuscript Section 2.4); 37 of 124 records assessed for eligibility were excluded on this basis (manuscript Table 3). No sensitivity analysis comparing these 37 unretrieved records against the 78 included studies has been performed; this remains an open item (see `PRISMA_2020_Checklist.md`, item 13f).
-- The network files in `nlp_analysis/networks/` are visual renders (PNG/PDF) produced from the underlying co-occurrence data, filtered for legibility. The raw, unfiltered graph data files (`.gexf`, as referenced in the manuscript) are not yet included in this repository; if you need the complete unfiltered networks for independent reanalysis, please contact the corresponding author.
+- The Q3 text-mining analysis is run with a fixed random seed (33, across NumPy, UMAP, and HDBSCAN); this directly supersedes an earlier, non-seeded version of the analysis (kept at `notebooks/legacy/`), acknowledged in the manuscript as a resolved limitation.
+- The reporting-quality indicator in Table S2 is an approximate, non-validated screening heuristic, distinct from the formal risk-of-bias assessment in Table S5 (QUIN for in vitro studies, SYRCLE for in vivo/CAM studies), which has been applied to all 78 included studies with a second independent blinded assessor and an explicit, uniform overall-judgement threshold rule (see `docs/Data_Dictionary_Supplementary_Tables.md`).
+- Full-text accessibility was a Stage 2 eligibility criterion (manuscript Section 2.4); 37 of 124 records assessed for eligibility were excluded on this basis. No sensitivity analysis comparing these 37 unretrieved records against the 78 included studies has been performed (open item, `docs/PRISMA_2020_Checklist.md`, item 13f).
+- Full-text screening was single-reviewer, not dual-independent (manuscript Limitations).
 
-## Open items before this repository is submission-ready
+## Open items
 
-1. Raw search exports (Scopus and Web of Science, Q1 and Q2) have not been added and are not currently assembled; they are available from the corresponding author upon reasonable request.
-2. A record-level deduplication log (the actual list of removed duplicate DOIs) has not yet been added; `Deduplication_Log.md` currently documents the *method* and the *record counts* reported in the manuscript, not a row-by-row log, since the raw search exports were not available when this file was built.
-3. The raw, unfiltered `.gexf` network data files for the five Q3 content axes are not yet included (only filtered visual renders are provided; see Reproducibility notes above).
-4. Consider archiving a versioned snapshot of this repository (e.g., via Zenodo) and citing its DOI in the manuscript, per common journal data-availability requirements — this has not yet been done.
-5. No independent, dual-reviewer full-text screening or eligibility re-assessment has been performed (single-reviewer screening, acknowledged as a limitation in the manuscript, Section 2.7 and Discussion).
+1. Raw search exports (Scopus and Web of Science) are available from the corresponding author on request but not included here.
+2. A record-level deduplication log (the actual removed-duplicate DOI list) is not included; `data/raw/Deduplication_Log.md` documents the method and manuscript-reported counts only.
+3. `src/` and `config/` are not yet wired into the notebook (the notebook does not read `config/*.json` back in) -- see `src/README.md` and `config/README.md`.
+4. The fragment/topic/entity-level intermediate tables proposed in an earlier reorganization plan (`studies.csv`, `fragments.csv`, `topic_assignments.csv`, `axis_assignments.csv`, `entities.csv`, each with a `run_id`) do not exist as standalone files yet -- see `data/processed/README.md`.
+5. No independent, dual-reviewer full-text screening has been performed.
+6. Consider archiving a versioned snapshot of this repository (e.g., via Zenodo) and citing its DOI in the manuscript.
+
+See `docs/REORGANIZATION_NOTES.md` for the full record of what changed in this reorganization and why.
 
 ## Citation
 
-If you use this dataset, please cite the manuscript (citation to be finalized upon acceptance/publication in *Biomaterials and Biosystems*).
+See `CITATION.cff`. Citation to the manuscript itself will be finalized upon acceptance/publication in *Biomaterials and Biosystems*.
 
 ## License
 
