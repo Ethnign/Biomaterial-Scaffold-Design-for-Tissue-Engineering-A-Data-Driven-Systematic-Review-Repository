@@ -1,0 +1,55 @@
+﻿topico,n_fragmentos,s_met,cobertura_metodologia_pct,top_palabras,categoria,decision,Material_Composicion,Estrategia_Fabricacion,Propiedad_Ingenieria,Funcion_Biologica,Aplicacion_Tisular
+0,743,1.0,98.5,"min, solution, ml, pbs, medium, µl, added, usa, incubated, samples",metodologico_dominante,excluir,False,False,False,False,False
+2,184,0.464,94.6,"alp, sf, cs sf, gelma cells, sralg, sf sralg, staining, rpcl, alp activity, group",mixto_metodologico_tematico,revisar manualmente,False,False,False,True,False
+3,169,0.0,63.3,"bone, bone defects, defects, bone tissue, bmp7, bones, bhgo, natural, clinical, limited",contenido_tematico,conservar,False,False,False,False,True
+4,70,0.0,67.1,"printing, ink, print, extrusion, printing process, reversed, angles, printed, printability, 3d printing",contenido_tematico,conservar,False,True,True,False,False
+5,65,0.0,80.0,"wound, nag-ccs, healing, wound healing, qtg, qtg ppp, ppp, nag, treatment group, blank",contenido_tematico,conservar,False,False,False,True,True
+7,56,1.0,87.5,"methodology, writing, editing, review editing, investigation, writing review, project, funding, conceptualization, review",metodologico_dominante,excluir,False,False,False,False,False
+8,46,0.0,80.4,"keratin, kgh, kg, kgh scaffold, kg scaffold, agnps, hap, kg kgh, kgh scaffolds, plga",contenido_tematico,conservar,True,False,False,False,False
+9,44,0.0,90.9,"sponge, fibres, gelatine, pcl gelatine, hydrogel fiber, humidity, skin flaps, flaps, fibers, gel sponge",contenido_tematico,conservar,True,False,False,False,False
+11,42,0.0,76.2,"nch, carbomer, nhap, gelma, gelma nhap, ca2, gelation, gelatin, nhap-based, gelma nhap-based",contenido_tematico,conservar,True,False,False,False,False
+12,40,0.0,85.0,"xg, yarn, heparin, hydrogel hydrogel, gels, hg, dehydration, wg, water content, chitosan",contenido_tematico,conservar,True,False,False,False,False
+13,40,0.0,72.5,"tendon, tenocytes, tendons, static, cell scaffold, collagen, yarn, dynamic culture, ghct, collagen iii",contenido_tematico,conservar,True,False,False,False,True
+14,37,0.0,86.5,"glucose, obs, ob, hg, dm, chima, ng, pclf, enzyme, rage",contenido_tematico,conservar,False,False,False,False,False
+16,35,0.0,80.0,"graphene, g-t, gyroid, tooth, tooth-derived, exposure energy, designs, simulations, gradient, teeth",contenido_tematico,conservar,True,True,False,False,True
+18,33,0.0,63.6,"th, te, io, ic, ld, ff, fi, er, ig, sc",contenido_tematico,conservar,False,False,False,False,False
+19,33,0.0,78.8,"pcl-da, vegf, peptide, vegf peptide, fibrous scaffolds, thiol-ene, huvecs, fibrous, pcl-da pcl-da, thiol-ene reaction",contenido_tematico,conservar,False,False,False,True,False
+20,33,0.0,66.7,"haw, nano-zno, nano-zno haw, haw nano-zno, nrf2, haw group, osteoblasts, co-cultured, osteoinductivity, osteoblast",contenido_tematico,conservar,False,False,False,False,False
+21,33,0.0,81.8,"mxene, mxene-ecm, axonal, mxene-ecm scaffolds, micro-meshes, stimulation, neurons, electrical stimulation, electroconductive, micro-mesh",contenido_tematico,conservar,True,False,False,True,False
+22,31,0.0,93.5,"oxi-ha, adh, oxi-ha adh, adh hydrogel, fisetin, kartogenin, oa, oxidation, hydrogel containing, nps",contenido_tematico,conservar,False,True,False,False,False
+23,31,0.0,74.2,"aminolysis, gel coating, coating, gel, aminolyzed, aminolysed, gel coated, crosslinking, edc, amine",contenido_tematico,conservar,False,True,False,False,False
+24,31,0.0,83.9,"pcl-gnss, pcl-gnss pda, pda mg, gnss, pda, gnss pda, mg, mg pcl-gnss, pure pcl, nir",contenido_tematico,conservar,False,True,False,False,False
+25,30,0.0,90.0,"trabeculae, defect area, 3d reconstruction, gph, new bone, weeks, periphery, new, groups weeks, c-type",contenido_tematico,conservar,True,False,False,False,False
+26,29,0.0,37.9,"university, school, china, department, hospital, key laboratory, laboratory, medical university, medical, taiwan",contenido_tematico,conservar,False,False,False,False,False
+27,29,0.0,100.0,"stretching, amide, cm, vibrations, band, stretching vibrations, bending, amide ii, bands, peak cm",contenido_tematico,conservar,False,False,False,False,False
+28,29,0.0,96.6,"vpm, mpi, peald, ald, tio2, mpi peald, o2, vapour, ti, vpm mpi",contenido_tematico,conservar,True,True,False,False,False
+29,28,0.0,96.4,"tri-layered, single-layered, 1e, weeks, core-shell, zero, core-shell scaffolds, 0e, degradation, days degradation",contenido_tematico,conservar,False,False,True,False,False
+30,27,0.0,74.1,"hydrogels, pda-based, pda, permission, pcl n-ha, ref, drug, adapted, activity agnps, drug delivery",contenido_tematico,conservar,False,True,False,False,False
+31,27,0.0,66.7,"wbpu, p17t10, pc12, p17t0, brain, brain tissue, lps, traumatic, neurites, microglia",contenido_tematico,conservar,False,False,False,False,False
+32,27,0.221,100.0,"pva cs, pva, pla, granule, ha, ba, peaks, pla pla, cm, cs ha",contenido_tematico,conservar,True,False,False,False,False
+33,26,0.0,84.6,"elastin, smcs, pcl elastin, smooth muscle, fiber membrane, phenotype, muscle, contractile, muscle cells, smooth",contenido_tematico,conservar,True,False,False,False,True
+34,25,0.0,96.0,"bc, cdc, bsa, ciprofloxacin, chitosan nanofiber, nanoparticles, cip, bmp-2, chitosan, complex",contenido_tematico,conservar,True,False,False,False,False
+35,25,0.0,76.0,"piezoelectric, dpc, dpc cpc, piezoelectric ceramics, cpc, piezoelectric properties, ceramics, pvdf, electrical, stimulation",contenido_tematico,conservar,True,False,True,True,False
+36,24,0.0,100.0,"df, phbv, phbv pcl, pcl df, df-ml, pcl df-ml, polymer fibers, fibers, pcl-ml, release ml",contenido_tematico,conservar,False,False,False,False,False
+37,23,0.0,87.0,"bbg, pla-10ha, pla, pla-10bbg, pla-20bbg, specimens, ha bbg, pla-20bbg scaffolds, pla pla, pla-10ha scaffolds",contenido_tematico,conservar,True,False,False,False,False
+38,22,0.0,72.7,"esnfms, resin, esnfm, framing, handling, grade, processing, extended, framed, frames",contenido_tematico,conservar,False,False,False,False,False
+39,22,0.0,95.5,"nw, nw pcl, mw pcl, mw, willemite, mpa, pcl samples, willemite particles, pcl scaffolds, modulus",contenido_tematico,conservar,False,False,True,False,False
+40,21,0.0,95.2,"nps, cs-bfgf, cs-bfgf nps, nps scaffold, scaffold nps, pla fibers, pla fiber, porous pla, bsa-bfgf, fiber nps",contenido_tematico,conservar,False,True,False,False,False
+41,21,0.0,85.7,"ink, n-ha, acetic acid, acetic, printing ink, biomaterial, inks, biomaterial inks, gel, gel pcl",contenido_tematico,conservar,False,True,False,False,False
+42,21,0.0,71.4,"vp, bmhp, bladder, bmhp vp, mscs, recruitment, fibrosis, vascularization, mscs recruitment, post-surgery",contenido_tematico,conservar,False,False,False,True,True
+43,20,0.0,95.0,"nanoneedle, bmmscs, arrays, nanoneedle arrays, multipotency, substrates, pcl nanoneedle, mscs, cell-cell, pcl1",contenido_tematico,conservar,False,False,False,False,False
+44,18,0.0,94.4,"p1, p3, pcl3, polyhipes, polar, molecular weight, macromolecular, pcl1, p2, methacrylation",contenido_tematico,conservar,False,False,False,False,False
+45,18,0.0,55.6,"tes, bi, meniscus, radiopaque, ct, wt bi, attenuation, monitoring, cnr, bismuth",contenido_tematico,conservar,False,False,True,False,True
+46,18,0.0,83.3,"cuo, hap cuo, hap, hap zno, zno, cuo nanocomposite, hv, zno nanocomposite, nanocomposite, cuo hap",contenido_tematico,conservar,True,False,False,False,False
+47,17,0.0,82.4,"cur, curcumin, cur-pu, polyurethane, bdo-pu, cur-pu bdo-pu, crystallization, bioavailability, benzene, benzene ring",contenido_tematico,conservar,True,False,False,False,False
+48,17,0.0,100.0,"nf, gas, nf gas, cm-2, cm-2 nf, cm-1 nf, sponge, cm cm-1, nf cm-2, sf-pcl",contenido_tematico,conservar,False,False,False,False,False
+49,17,0.0,88.2,"l3, l2, l1, microgrooves, raw264, wave, l2 l3, smooth group, raw264 cells, osteoclastic",contenido_tematico,conservar,False,False,False,False,False
+50,16,0.0,87.5,"gqds, pcl-ch, s5, s3, s2, 5gqds, s4, s1, s5 pcl-ch-4gqds, pcl-ch-4gqds",contenido_tematico,conservar,False,False,False,False,False
+51,16,0.0,93.8,"ba, wt ba, candida, antifungal, albicans, hfob, pva cs, hfob cells, cs ha, candida albicans",contenido_tematico,conservar,False,False,False,True,False
+52,16,0.0,81.2,"mof, mof fe, ag, fe, fe ag, agcl, ag-5, m-5, pcl mof, r2",contenido_tematico,conservar,True,False,False,False,False
+53,16,0.0,93.8,"zno cs, zno, znonps, znonps cs, cs group, cs composite, cs zno, cs, cs scaffolds, osteogenic ability",contenido_tematico,conservar,True,False,False,False,False
+54,16,0.0,75.0,"6ra, 3nha, ra, 6ra 3nha, 91pcl 6ra, 91pcl, nha, 100pcl, neural tissue, wt nha",contenido_tematico,conservar,False,False,False,False,False
+55,15,0.0,66.7,"gph, gqd, gph scaffolds, reduced modulus, wt gqd, gqd scaffolds, wca, gfs, cm-1, fap",contenido_tematico,conservar,True,False,False,False,False
+56,15,0.0,26.7,"isfahan, iran, missouri, medical sciences, university medical, isfahan university, university, research center, sciences, tehran",contenido_tematico,conservar,False,False,False,False,False
+57,15,0.0,66.7,"bioink, kaolin, large area, bioprinting, biowork pen, biowork, pen, alginate chitosan, 3d bioprinting, alginate",contenido_tematico,conservar,True,True,False,False,False
+58,15,0.0,60.0,"mxene, dublin, micro-meshes, wiley, mxene micro-meshes, mew, tx, mofs, high density, films",contenido_tematico,conservar,True,False,False,False,False

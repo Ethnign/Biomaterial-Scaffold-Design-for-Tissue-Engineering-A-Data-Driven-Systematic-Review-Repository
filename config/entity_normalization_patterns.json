@@ -1,0 +1,22 @@
+{
+  "_source": "Extracted verbatim from pipeline_Q3_BioBERT_5ejes_CORREGIDO.ipynb (Fase 5.5, 'Normalizacion DEFINITIVA', based on a full manual audit of spelling-variant frequencies). Applied in list order to each fragment's text before entity extraction.",
+  "case_sensitive_patterns": ["\\bHA\\b", "\\bCS\\b"],
+  "patterns": [
+    {"regex": "\\bnano-?hydroxyapatite\\w*\\b", "replacement": "hydroxyapatite", "note": "hydroxyapatite: 665 real mentions across 13 spelling variants"},
+    {"regex": "\\bsoluhydroxyapatite\\b", "replacement": "hydroxyapatite"},
+    {"regex": "\\bhydroxyapatites?\\b", "replacement": "hydroxyapatite"},
+    {"regex": "\\bn-?hap\\w*\\b", "replacement": "hydroxyapatite", "note": "matches nhap, n-hap, nhas"},
+    {"regex": "\\bn-?ha\\b", "replacement": "hydroxyapatite", "note": "matches n-ha, nha"},
+    {"regex": "\\bhap0\\b", "replacement": "hydroxyapatite"},
+    {"regex": "\\bhap-?based\\b", "replacement": "hydroxyapatite"},
+    {"regex": "\\bhap-?enriched\\b", "replacement": "hydroxyapatite"},
+    {"regex": "\\bhap-?containing\\b", "replacement": "hydroxyapatite"},
+    {"regex": "\\bhap\\b", "replacement": "hydroxyapatite", "note": "HAp alone, 232 occurrences, the most frequent variant"},
+    {"regex": "\\bHA\\b", "replacement": "hydroxyapatite", "note": "HA alone, exact uppercase only (case-sensitive)"},
+    {"regex": "\\bcts\\b", "replacement": "chitosan", "note": "chitosan: 'chitosan' dominates; 'cts' is a real variant; 'chitin' is deliberately NOT merged (a different substance)"},
+    {"regex": "\\bCS\\b", "replacement": "chitosan", "note": "case-sensitive"},
+    {"regex": "\\bpcl\\d+\\b", "replacement": "pcl", "note": "PCL concentration variants (pcl25, pcl50, pcl35, pcl1, pcl2, pcl3) collapsed to the base material"},
+    {"regex": "\\bpcls\\b", "replacement": "pcl"}
+  ],
+  "known_open_limitation": "The same word-boundary normalization that collapses hydroxyapatite's spelling variants also maps the standalone abbreviation 'HA' to hydroxyapatite; Supplementary Table S1 documents at least two studies using hyaluronic acid (also commonly abbreviated 'HA') in the same corpus, so a small number of hyaluronic-acid mentions may have been merged into the hydroxyapatite node. Disclosed in the manuscript (Section 4, Q3 discussion) as an unverified, not-fully-ruled-out limitation."
+}

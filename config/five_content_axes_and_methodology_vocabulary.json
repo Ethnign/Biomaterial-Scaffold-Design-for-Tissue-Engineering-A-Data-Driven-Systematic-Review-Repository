@@ -1,0 +1,70 @@
+{
+  "_source": "Extracted verbatim from pipeline_Q3_BioBERT_5ejes_CORREGIDO.ipynb (Fase 5 cell, topic classification into 5 content axes). Provided here as an externalized, reviewable config artifact; the notebook remains the executable source of truth until fully modularized into src/.",
+  "random_seed": 33,
+  "content_axis_keywords": {
+    "Material_Composicion": [
+      "pcl","pla","plga","chitosan","cs","gelma","collagen","hydroxyapatite","ha","hap","nhap",
+      "bioglass","bbg","graphene","gph","mxene","zno","agnps","ag","curcumin","cur",
+      "gelatin","gelatine","alginate","pva","pu","polyurethane","mof","tio2","pvdf",
+      "keratin","elastin","fibroin","agarose","tcp","bioceramic"
+    ],
+    "Estrategia_Fabricacion": [
+      "printing","3d","bioprinting","dlp","photopolymerization","electrospinning",
+      "freeze","freezing","lyophilization","foaming","crosslinking","crosslinked",
+      "coating","aminolysis","polydopamine","pda","plasma","ald","peald","sintering",
+      "nanoparticle","nps","nano","gyroid","tpms","core","shell","gradient","extrusion","ink"
+    ],
+    "Propiedad_Ingenieria": [
+      "mechanical","modulus","compressive","tensile","strength","stiffness","porosity",
+      "pore","degradation","swelling","viscosity","rheology","printability","stability",
+      "crystallinity","hydrophilic","conductivity","piezoelectric","radiopaque",
+      "elastic","elongation","hardness","morphology","diameter"
+    ],
+    "Funcion_Biologica": [
+      "cytocompatibility","adhesion","proliferation","migration","differentiation",
+      "osteogenic","osteogenesis","angiogenic","angiogenesis","antibacterial","bacterial",
+      "antifungal","immunomodulation","healing","wound","release","controlled","antioxidant",
+      "recruitment","stimulation","integration","viability","alp","calcium","mc3t3",
+      "vegf","inhibition","aureus","cytotoxicity","mineralization"
+    ],
+    "Aplicacion_Tisular": [
+      "bone","craniofacial","dental","tooth","cartilage","osteochondral","skin","wound",
+      "nerve","neural","neuron","vascular","vessel","endothelial","tendon","ligament",
+      "meniscus","bladder","urological","muscle","dermal","skeletal","defect"
+    ]
+  },
+  "methodology_vocabulary": [
+    "sem","tem","ftir","raman","xrd","xps","dsc","tga","contact","angle",
+    "mtt","live","dead","qpcr","western","cfu","mic","histology","anova",
+    "incubated","incubation","medium","pbs","min","ml","solution","water","well",
+    "culture","cultured","rpm","centrifuged","statistical","significant","test",
+    "peak","peaks","spectra","assay","staining","stained","dye","washing","significance",
+    "writing","funding","statement","contribution","conceptualization","supervision",
+    "methodology","validation","editing","review","resources","project"
+  ],
+  "common_author_surnames_for_bibliographic_noise_detection": [
+    "wang","zhang","li","liu","chen","wu","xu","et","al","mater","sci","doi","org","https","journal","adv"
+  ],
+  "topic_classification_thresholds": {
+    "note": "Applied in order; first match wins.",
+    "rules": [
+      {"condition": "is_ocr_noise_heuristic", "category": "ruido_ocr", "decision": "excluir"},
+      {"condition": "is_bibliographic_heuristic (>=3 of top-10 words are common author surnames)", "category": "bibliografico_editorial", "decision": "excluir"},
+      {"condition": "s_met >= 0.70 AND cobertura_metodologia >= 0.60", "category": "metodologico_dominante", "decision": "excluir"},
+      {"condition": "s_met < 0.40", "category": "contenido_tematico", "decision": "conservar"},
+      {"condition": "else (0.40 <= s_met < 0.70, or s_met>=0.70 with cobertura<0.60)", "category": "mixto_metodologico_tematico", "decision": "revisar manualmente"}
+    ],
+    "s_met_definition": "sum of c-TF-IDF weights of topic's top words that are in methodology_vocabulary, divided by (that sum + sum of c-TF-IDF weights of topic's top words that are in the union of all content_axis_keywords)",
+    "cobertura_metodologia_definition": "fraction of a topic's fragments containing >=1 whole-word match (word-boundary regex) against methodology_vocabulary"
+  },
+  "entity_cooccurrence_network": {
+    "minimum_edge_weight_cooccurrence_count": 2,
+    "note": "Edge added only if two entities co-occur in >=2 fragments assigned to that axis. Edge 'distance' attribute = 1/weight (used for betweenness centrality, since higher co-occurrence should mean conceptually closer, not a longer path)."
+  },
+  "ner_model": {
+    "huggingface_model": "d4data/biomedical-ner-all",
+    "aggregation_strategy": "max",
+    "max_tokens": "min(512, tokenizer.model_max_length)",
+    "sliding_window_overlap_tokens": 50
+  }
+}
