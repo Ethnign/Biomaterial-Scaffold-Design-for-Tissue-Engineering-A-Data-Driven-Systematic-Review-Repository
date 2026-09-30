@@ -47,6 +47,7 @@ LICENSE           CC BY 4.0.
 
 - The Q3 pipeline notebook was developed and run on **Google Colab**; its saved kernel metadata records **Python 3.14.7**. Package versions were **not pinned** at the time these results were produced (see `results/metrics/run_manifest.json`) -- this is disclosed as an open reproducibility gap, not fixed retroactively.
 - Install packages with `pip install -r requirements.txt` (unpinned names only, for the reason above). A GPU is used automatically if available (falls back to CPU) for the biomedical NER step.
+- **Known gap:** the notebook reads and writes its inputs/outputs from hardcoded `/content/...` paths (Colab's local, ephemeral disk), not from a documented, centralized project root, and does not include a `drive.mount()`/download step. Running it therefore currently means uploading inputs directly into a Colab session's `/content/` at each of several points, rather than pointing it at a project folder. See `docs/REORGANIZATION_NOTES.md` (2026-09-30 addendum) for the specific fix recommended and why it was not done blind (no GPU/PDFs available to verify a rewrite would not break the pipeline).
 
 ## Main run-through (Section 4 / Q3 pipeline)
 
@@ -73,6 +74,7 @@ See `docs/Figure_Table_Manifest.md` for the complete mapping of every manuscript
 1. Raw search exports (Scopus and Web of Science) are available from the corresponding author on request but not included here.
 2. A record-level deduplication log (the actual removed-duplicate DOI list) is not included; `data/raw/Deduplication_Log.md` documents the method and manuscript-reported counts only.
 3. `src/` and `config/` are not yet wired into the notebook (the notebook does not read `config/*.json` back in) -- see `src/README.md` and `config/README.md`.
+3b. The notebook's I/O paths are hardcoded to Colab's `/content/`, not centralized to a documented project root -- see the "Known gap" note under Environment above and `docs/REORGANIZATION_NOTES.md`.
 4. The fragment/topic/entity-level intermediate tables proposed in an earlier reorganization plan (`studies.csv`, `fragments.csv`, `topic_assignments.csv`, `axis_assignments.csv`, `entities.csv`, each with a `run_id`) do not exist as standalone files yet -- see `data/processed/README.md`.
 5. No independent, dual-reviewer full-text screening has been performed.
 6. Consider archiving a versioned snapshot of this repository (e.g., via Zenodo) and citing its DOI in the manuscript.
