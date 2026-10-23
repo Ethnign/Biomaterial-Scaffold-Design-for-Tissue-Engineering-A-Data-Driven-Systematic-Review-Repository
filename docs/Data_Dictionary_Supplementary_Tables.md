@@ -1,6 +1,6 @@
 # Data Dictionary — Supplementary Tables S1-S5
 
-Corresponds to: *Cross-Material Design Strategies in Hydroxyapatite-, Chitosan-, and Polycaprolactone-Based Scaffolds: A Systematic Review of Biological Performance and Evidence Quality*. Study identifiers (`P##`, `W##`) are internal extraction codes, not the manuscript's `ref##` bibliography numbers; a full `Study_ID` <-> `ref##` crosswalk for the 19 studies discussed in Section 3.5 is provided in Table S4 (columns `Ref_in_manuscript` and `Extraction_Study_ID`). A crosswalk for the remaining 59 studies has not yet been built (see open item at the end of this file).
+Corresponds to: *Design Strategies and Biological Performance of Hydroxyapatite, Chitosan, and PCL Scaffolds for Tissue Engineering: A Systematic Review*. Study identifiers (`P##`, `W##`) are internal extraction codes, not the manuscript's `ref##` bibliography numbers; a full `Study_ID` <-> `ref##` crosswalk for the 19 studies discussed in Section 3.5 is provided in Table S4 (columns `Ref_in_manuscript` and `Extraction_Study_ID`). A crosswalk for the remaining 59 studies has not yet been built (see open item at the end of this file).
 
 ## Supplementary Table S1 — Full Extraction Matrix (`Supplementary_Table_S1_Extraction_Matrix.csv`)
 

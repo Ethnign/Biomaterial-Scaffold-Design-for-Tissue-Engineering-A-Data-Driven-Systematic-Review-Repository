@@ -1,6 +1,6 @@
 # Biomaterial Scaffold Design for Tissue Engineering — Data & Code Repository
 
-Supporting repository for: **"Cross-Material Design Strategies in Hydroxyapatite-, Chitosan-, and Polycaprolactone-Based Scaffolds: A Systematic Review of Biological Performance and Evidence Quality"** (submitted to *Biomaterials and Biosystems*).
+Supporting repository for: **"Design Strategies and Biological Performance of Hydroxyapatite, Chitosan, and PCL Scaffolds for Tissue Engineering: A Systematic Review"** (submitted to *Biomaterials and Biosystems*).
 
 ## What this is
 
