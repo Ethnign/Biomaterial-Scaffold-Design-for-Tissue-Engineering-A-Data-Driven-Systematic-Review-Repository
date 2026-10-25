@@ -1,6 +1,6 @@
 # Biomaterial Scaffold Design for Tissue Engineering — Data & Code Repository
 
-Supporting repository for: **"Design Strategies and Biological Performance of Hydroxyapatite, Chitosan, and PCL Scaffolds for Tissue Engineering: A Systematic Review"** (submitted to *Biomaterials and Biosystems*).
+Supporting repository for: **"Design Strategies and Biological Performance of Hydroxyapatite, Chitosan, and PCL Scaffolds for Tissue Engineering: A Systematic Review"** (submitted to *Journal of Biomaterials Applications* (Sage)).
 
 ## What this is
 
@@ -83,7 +83,7 @@ See `docs/REORGANIZATION_NOTES.md` for the full record of what changed in this r
 
 ## Citation
 
-See `CITATION.cff`. Citation to the manuscript itself will be finalized upon acceptance/publication in *Biomaterials and Biosystems*.
+See `CITATION.cff`. Citation to the manuscript itself will be finalized upon acceptance/publication in *Journal of Biomaterials Applications*.
 
 ## License
 
