@@ -1,9 +1,9 @@
 # PRISMA-S Checklist (Search Reporting Extension)
 
 **Manuscript:** Design Strategies and Biological Performance of Hydroxyapatite, Chitosan, and PCL Scaffolds for Tissue Engineering: A Systematic Review
-**Target journal:** Biomaterials and Biosystems
+**Target journal:** Journal of Biomaterials Applications (Sage)
 
-This checklist follows the structure of PRISMA-S (Rethlefsen et al., 2021, *Systematic Reviews* 10:39), which extends PRISMA 2020 item 7 (search strategy) with search-specific reporting detail. As with the PRISMA 2020 checklist, gaps are stated explicitly rather than omitted. "Location" refers to `Full_Draft_Paper_LaTeX_v4.tex` unless a repository file is named. (Title and filename reference corrected on 2026-10-20 — both had drifted out of sync with the current manuscript title and filename.)
+This checklist follows the structure of PRISMA-S (Rethlefsen et al., 2021, *Systematic Reviews* 10:39), which extends PRISMA 2020 item 7 (search strategy) with search-specific reporting detail. As with the PRISMA 2020 checklist, gaps are stated explicitly rather than omitted. "Location" refers to `Full_Draft_Paper_LaTeX_SAGE_v1.tex` unless a repository file is named. (Title and filename reference corrected on 2026-10-20 — both had drifted out of sync with the current manuscript title and filename.)
 
 | # | Item | Location | Reported? |
 |---|---|---|---|
