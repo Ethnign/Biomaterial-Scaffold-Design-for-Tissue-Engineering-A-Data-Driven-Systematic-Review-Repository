@@ -21,6 +21,8 @@ preferred-citation:
       given-names: "Juan Sebastián"
     - family-names: "García Plúa"
       given-names: "Juan Carlos"
-  journal: "Biomaterials and Biosystems"
+  journal: "Journal of Biomaterials Applications"
+  publisher:
+    name: "Sage"
   status: "submitted"
   notes: "Update this file's DOI/volume/issue/pages once the manuscript is accepted and formally published; it is currently under review."
